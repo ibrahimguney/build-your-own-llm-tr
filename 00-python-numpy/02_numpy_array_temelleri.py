@@ -6,7 +6,7 @@ PyTorch `Tensor` da büyük ölçüde aynı arayüzü taklit ettiği için burad
 şey doğrudan transfer edilebilir.
 
 Bu dosyada şu soruların cevaplarını arıyoruz:
-  - Bir array'i nasıl yaratırız? Neden farklı yollar var?
+  - Bir array'i nasil yaratırız? Neden farklı yollar var?
   - `dtype`, `shape`, `ndim` ne anlatır?
   - İndeksleme/dilimleme Python listesinden ne farkı var?
   - Fancy ve boolean indexing ne işe yarar?
@@ -50,7 +50,7 @@ def array_olusturma() -> None:
 # 2) shape, ndim, dtype — bir tensörün "kimlik kartı"
 # -------------------------------------------------------------
 
-def kimlik_kartı() -> None:
+def kimlik_karti() -> None:
     # 2x3 bir matris kuralım.
     m = np.array([[1, 2, 3],
                   [4, 5, 6]])
@@ -85,7 +85,7 @@ def indeksleme() -> None:
     assert x[::2].tolist() == [0, 2, 4, 6, 8]
 
     # 2D'de tek bir köşeli parantez içinde virgülle eksenleri ayırmak,
-    # Python listelerine göre asıl konfor kaynağıdır.
+    # Python listelerine göre asil konfor kaynağıdır.
     # m[i, j] ↔ "i. satır, j. sütun".
     m = np.array([[1, 2, 3],
                   [4, 5, 6],
@@ -107,17 +107,17 @@ def indeksleme() -> None:
 def view_vs_copy() -> None:
     # Dilimleme NumPy'de varsayılan olarak *view* döner — yani aynı belleği paylaşır.
     # Bu, hızlıdır ama "ben sadece okudum sanmıştım" hatasına yol açabilir.
-    asıl = np.arange(10)
-    dilim = asıl[2:5]
+    asil = np.arange(10)
+    dilim = asil[2:5]
     dilim[0] = 999
 
     # Asıl da değişti — çünkü dilim aynı belleğe işaret ediyor.
-    assert asıl[2] == 999
+    assert asil[2] == 999
 
     # Kopya istiyorsak explicit söylemeliyiz.
-    güvenli = asıl[2:5].copy()
-    güvenli[0] = -1
-    assert asıl[2] == 999  # Bu sefer asıl etkilenmedi.
+    guvenli = asil[2:5].copy()
+    guvenli[0] = -1
+    assert asil[2] == 999  # Bu sefer asil etkilenmedi.
 
 
 # -------------------------------------------------------------
@@ -150,7 +150,7 @@ def fancy_ve_boolean_indexing() -> None:
 
 if __name__ == "__main__":
     array_olusturma()
-    kimlik_kartı()
+    kimlik_karti()
     indeksleme()
     view_vs_copy()
     fancy_ve_boolean_indexing()

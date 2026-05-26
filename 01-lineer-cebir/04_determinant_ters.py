@@ -140,9 +140,9 @@ def rank_sezgisi() -> None:
     Bu sezgi 06'da SVD ile sıfır olmayan tekil değer sayısına eşit hale gelecek
     ve 07'de düşük-rank yaklaşımın kalbini oluşturacak.
     """
-    tam_ranklı = np.array([[1.0, 0.0],
+    tam_rankli = np.array([[1.0, 0.0],
                            [0.0, 1.0]])
-    assert np.linalg.matrix_rank(tam_ranklı) == 2
+    assert np.linalg.matrix_rank(tam_rankli) == 2
 
     rank_eksik = np.array([[1.0, 2.0],
                            [2.0, 4.0]])  # 2. satır = 2 × 1. satır

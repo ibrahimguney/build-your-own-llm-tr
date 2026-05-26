@@ -71,12 +71,12 @@ def sayisal_gradyan(f, x: np.ndarray, h: float = 1e-5) -> np.ndarray:
         eski = x[ix]
 
         x[ix] = eski + h
-        artı = f(x)
+        arti = f(x)
         x[ix] = eski - h
         eksi = f(x)
         x[ix] = eski  # geri yükle; aksi halde sonraki adımı kirletir
 
-        grad[ix] = (artı - eksi) / (2 * h)
+        grad[ix] = (arti - eksi) / (2 * h)
         it.iternext()
     return grad
 

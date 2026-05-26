@@ -4,20 +4,24 @@ Bu dosya, Claude Code ile bu projede çalışırken uyulması gereken kuralları
 
 ## Dil Kuralı
 
-- **Kod:** İngilizce (değişken, fonksiyon, sınıf, dosya adları)
-- **Yorumlar ve docstring'ler:** Türkçe
-- **Modül README.md dosyaları:** Türkçe
-- **Commit mesajları:** İngilizce (konvansiyonel format)
+- **Dosya ve klasör adları:** İngilizce veya Türkçe; **ASCII olmalı** (Türkçe karakter yok).
+- **Fonksiyon, değişken, sınıf adları:** Türkçe (sezgi için) veya İngilizce (genel API için) serbest; **ASCII olmalı**. Türkçe `ı/ğ/ş/ç/ö/ü` karakterleri yerine ASCII karşılıkları kullanılır: `kimlik_karti` (`kimlik_kartı` değil), `markov_duragan_dagilim` (`markov_durağan_dağılım` değil).
+- **Yorumlar ve docstring'ler:** Türkçe; her tür karakter serbest.
+- **Modül README.md dosyaları:** Türkçe.
+- **Commit mesajları:** İngilizce (konvansiyonel format).
 
-Örnek:
+Örnek (Türkçe pratiği — projenin baskın stili):
 
 ```python
-def compute_attention_weights(query, key):
-    # Sorgu ve anahtar vektörlerinin nokta çarpımını ölçekleyerek dikkat ağırlıklarını hesapla.
-    # Boyut kökü ile bölme, gradyanları kararlı tutar (Vaswani et al., 2017).
-    scale = query.shape[-1] ** 0.5
-    return (query @ key.T) / scale
+def kosinus_benzerligi(u, v):
+    # İki vektör arasındaki yön benzerliğini ölçer.
+    # Embedding'lerde büyüklük değil yön önemli olduğu için tercih edilir.
+    return (u @ v) / (np.linalg.norm(u) * np.linalg.norm(v))
 ```
+
+İngilizce identifier ile yazmak da geçerli — özellikle "framework arayüzü" gibi
+duran fonksiyonlar için (`compute_attention_weights`, `scaled_dot_product`).
+İki stil aynı dosyada karışabilir.
 
 ## Modül Yapısı
 

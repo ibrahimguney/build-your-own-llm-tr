@@ -151,7 +151,7 @@ def kosegenlestirme() -> None:
 # 6) Markov zinciri — özdeğerin pratik gücü
 # -------------------------------------------------------------
 
-def markov_durağan_dağılım() -> None:
+def markov_duragan_dagilim() -> None:
     """
     Bir geçiş matrisi P (her satır olasılık dağılımı) verildiğinde, **durağan
     dağılım** π = πP koşulunu sağlar — yani P'nin özdeğeri 1 olan özvektörüdür.
@@ -194,5 +194,5 @@ if __name__ == "__main__":
     karakteristik_denklem()
     simetrik_matris_ozellikleri()
     kosegenlestirme()
-    markov_durağan_dağılım()
+    markov_duragan_dagilim()
     print("05_ozdeger_ozvektor: tüm assert'ler geçti.")
