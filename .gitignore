@@ -40,6 +40,9 @@ data/
 *.swp
 *.swo
 
+# Claude Code local config
+.claude/
+
 # Dağıtım / paketleme
 *.tar.gz
 *.zip
