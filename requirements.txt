@@ -1,0 +1,7 @@
+numpy
+matplotlib
+jupyter
+ipykernel
+
+# torch modül 02'de eklenecek:
+# torch
